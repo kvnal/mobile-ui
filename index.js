@@ -82,7 +82,11 @@ window.addEventListener("load", (event) => {
 
 
     // peer js API START ------------
-    var peer = new Peer();
+    var peer = new Peer(null, {
+        config: {'iceServers': 
+          [ { urls: 'stun:freestun.net:3478' }, { urls: 'turn:freestun.net:3478', username: 'free', credential: 'free' } ]
+        } 
+      , debug:2});
     var conn = null;
     var isAccelSent = true;
 
