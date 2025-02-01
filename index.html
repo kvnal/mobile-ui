@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>mobile ui</title>
 
 </head>
-<button id="btn_permission" >Premission</button>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
+<body class="flex flex-col justify-center h-screen items-center">
 
-<div style="visibility: hidden;" id="div_id">
-    <input placeholder="pc id" id="pc_id"/>
-    <button id="btn_connect_to_pc">connect to pc</button>
+    <div class="flex flex-col" id="div_permission">
+
+        <button id="btn_permission"  class="bg-blue-500 p-3 text-white  text-2xl font-semibold active:bg-blue-700">Premission</button>
+        <span class="block text-sm mt-2 text-gray-600">click here to give permission to access sensors</span>
+    </div>
+        
+        
+<div class="flex flex-col" style="visibility: hidden;" id="div_id">
+    <input class="border-2 border-violet-500 p-3 text-violet-800 outline-violet-800 text-2xl font-semibold mb-2 focus:border-violet-700" placeholder="pype PC ID here..." id="pc_id"/>
+
+    <button class="bg-violet-500 p-3 text-white  text-2xl font-semibold active:bg-violet-700" id="btn_connect_to_pc">Connect to PC</button>
 </div>
 
-<h4 id="el_status"></h4>
+<h4 id="h4_status" class="text-sm mb-4 font-semibold text-green-600"></h4>
+<h4 id="h4_info" class="text-md mb-4 font-semibold text-red-600"></h4>
 
+<div id="div_controller" style="visibility: hidden;">
+    <button class="bg-blue-900 p-3 text-white  text-2xl font-semibold active:bg-blue-950" id="btn_throw_ball">Throw ball</button>
+</div>
 </body>
     <script src="./index.js"></script>
     <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
